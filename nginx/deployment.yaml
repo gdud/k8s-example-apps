@@ -16,8 +16,10 @@ spec:
         app: nginx
     spec:
       serviceAccountName: nginx
+      securityContext:
+        runAsNonRoot: false
       containers:
-      - image: nginx:1.23.2
+      - image: nginx@sha256:943c25b4b66b332184d5ba6bb18234273551593016c0e0ae906bab111548239f
         name: nginx
         ports:
           - containerPort: 80

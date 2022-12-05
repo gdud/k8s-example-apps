@@ -4,3 +4,6 @@ resources:
 - deployment.yaml
 - sa.yaml
 - service.yaml
+- hpa.yaml
+
+namespace: apps
