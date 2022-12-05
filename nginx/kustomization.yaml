@@ -6,4 +6,4 @@ resources:
 - service.yaml
 - hpa.yaml
 
-namespace: apps
+namespace: k8s-example-apps
