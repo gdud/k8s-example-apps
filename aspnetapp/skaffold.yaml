@@ -1,0 +1,23 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+metadata:
+  name: aspnetapp
+build:
+  tagPolicy:
+    gitCommit:
+      ignoreChanges: false
+  artifacts:
+  - image: aspnetapp
+    context: dotnet-docker/samples/aspnetapp
+    docker:
+      dockerfile: Dockerfile.alpine-arm64-slim
+    hooks:
+      before:
+        - command: ["sh", "-c", "echo [HOOK] Image: $SKAFFOLD_IMAGE"]
+  local:
+    useDockerCLI: true
+    useBuildkit: true
+manifests:
+  kustomize:
+    paths:
+      - "."

@@ -1,0 +1,4 @@
+[submodule "dotnet-docker"]
+	path = aspnetapp/dotnet-docker
+	url = https://github.com/dotnet/dotnet-docker.git/
+	branch = main
